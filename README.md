@@ -24,25 +24,25 @@ Before diving into visualization, I first cleaned and structured the data using 
 
 Here’s a snippet of the SQL code used for data cleaning and transformation:
 
--- create a join
+## create a join
 select * from absenteeism_at_work a
 left join compensation c on c.ID = a.ID
 left join reasons r on a.`Reason for absence` = r.Number
 
--- find the healthiest employees for the bonus
+## find the healthiest employees for the bonus
 select * from absenteeism_at_work
 where `Social drinker`=0 and `Social smoker`=0 and `Body mass index`<25 and
 `Absenteeism time in hours` < (select AVG(`Absenteeism time in hours`) from absenteeism_at_work)
 
--- total number of non-smokers
+## total number of non-smokers
 select count(*) as non_smokers from absenteeism_at_work
 where `Social smoker` = 0
 
--- compensation rate increase for all non-smokers budget $983,221
--- 983221/(40*52*686) = 0.69
--- 0.69*(5*8*52) = $1435.2 increase per year assuming that employees work 8hrs/day and 5days/week for 52weeks/year
+## compensation rate increase for all non-smokers budget $983,221
+983221/(40*52*686) = 0.69
+0.69*(5*8*52) = $1435.2 increase per year assuming that employees work 8hrs/day and 5days/week for 52weeks/year
 
--- optimize this query
+## optimize this query
 select a.ID, r.Reason, `Month of absence`, `Body mass index`,
 case when a.`Body mass index` < 18.5 then 'Underweight'
   when a.`Body mass index` between 18.5 and 24.9 then 'Healthy Weight'

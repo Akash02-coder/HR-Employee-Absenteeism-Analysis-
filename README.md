@@ -40,6 +40,7 @@ where `Social smoker` = 0
 
 ## compensation rate increase for all non-smokers budget $983,221
 983221/(40*52*686) = 0.69
+## calculating total increment for year
 0.69*(5*8*52) = $1435.2 increase per year assuming that employees work 8hrs/day and 5days/week for 52weeks/year
 
 ## optimize this query

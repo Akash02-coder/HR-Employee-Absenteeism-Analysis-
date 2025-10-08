@@ -13,3 +13,11 @@ The dataset contains records of employee absenteeism, including details such as:
 - Working hours lost
 - Age, BMI, and other demographics
 - Transportation issues, alcohol consumption, and other external factors
+
+### Data Preparation and Cleaning with SQL
+Before diving into visualization, I first cleaned and structured the data using SQL. The key steps involved were:
+
+- Handling Missing Values: Replacing or removing null values in key columns.
+- Standardizing Formats: Ensuring consistency in date formats and categorical variables.
+- Creating Calculated Fields: Generating new columns such as total hours lost per employee and absenteeism rates per department.
+- Filtering Outliers: Identifying and excluding extreme cases to maintain data integrity.

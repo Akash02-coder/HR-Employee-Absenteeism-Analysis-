@@ -44,6 +44,7 @@ where `Social smoker` = 0
 0.69*(5*8*52) = $1435.2 increase per year assuming that employees work 8hrs/day and 5days/week for 52weeks/year
 
 ## optimize this query
+```sql
 select a.ID, r.Reason, `Month of absence`, `Body mass index`,
 case when a.`Body mass index` < 18.5 then 'Underweight'
   when a.`Body mass index` between 18.5 and 24.9 then 'Healthy Weight'
@@ -60,3 +61,4 @@ case when a.`Month of absence` IN (12,1,2) then 'Winter'
 from absenteeism_at_work a
 left join compensation c on c.ID = a.ID
 left join reasons r on a.`Reason for absence` = r.Number
+```
